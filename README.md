@@ -50,9 +50,13 @@ IAM Role with S3, Glue, and Athena permissions
 # Setup Instructions
 # Kafka on EC2
 Install Kafka
+
 sudo apt install default-jdk -y
+
 wget https://downloads.apache.org/kafka/3.7.0/kafka_2.13-3.7.0.tgz
+
 tar -xzf kafka_2.13-3.7.0.tgz
+
 cd kafka_2.13-3.7.0
 
 # Start Zookeeper and Kafka Broker
@@ -61,9 +65,9 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 # Start Kafka Broker (new terminal)
 bin/kafka-server-start.sh config/server.properties
 
-# Create Kafka Topic
+# Create Kafka Topic (new terminal)
 bin/kafka-topics.sh --create --topic my-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 # Produce Data
 bin/kafka-console-producer.sh --topic my-topic --bootstrap-server localhost:9092
-# Consume Data
+# Consume Data (new terminal)
 bin/kafka-console-consumer.sh --topic my-topic --bootstrap-server localhost:9092 --from-beginning
